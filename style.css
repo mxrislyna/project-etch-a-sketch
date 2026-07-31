@@ -1,0 +1,22 @@
+/* Main box that holds the squares*/
+#grid-container {
+    width: 480px;
+    height: 480px;
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid black;
+}
+
+/* The style for every square */
+.square {
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    background-color: beige;
+}
+
+.colored {
+    background-color: olive;
+}
+
