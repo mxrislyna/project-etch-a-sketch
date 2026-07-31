@@ -1,6 +1,6 @@
 body {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -40,7 +40,7 @@ body {
 }
 
 #reset-btn {
-    background-color: yellowgreen;
+    background-color: yellow;
     height: 30px;
     width: auto;
     font-size: 15px;
