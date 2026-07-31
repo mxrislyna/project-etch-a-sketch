@@ -37,9 +37,18 @@ body {
 }
 
 #reset-btn {
-    margin-top: 50px;
+    margin-top: 5px;
     background-color: yellowgreen;
     height: 30px;
     width: auto;
+    font-size: 15px;
+}
+
+#eraser {
+    margin-top: 50px;
+    background-color: pink;
+    height: 30px;
+    width: auto;
+    font-size: 15px;
 }
 
