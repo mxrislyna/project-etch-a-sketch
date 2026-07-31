@@ -1,25 +1,31 @@
-const container = document.querySelector("#grid-container");
+//Create square
+function createSquare(squareSize) {
+    const square = document.createElement('div');
+    square.classList.add('square');
 
+    square.style.width = `${squareSize}%`;
+    square.style.height = `${squareSize}%`;
 
-//Grid creator
-function gridBuilder (squaresPerSide) {
-    let totalSquares = squaresPerSide * squaresPerSide;
+    square.addEventListener('mouseenter', () => {
+        square.style.backgroundColor = getRandomColor();
+    });
 
-        for (let i = 0; i < totalSquares; i++) {
-            const square = document.createElement('div');
-            const squareSize = 100 / squaresPerSide;
-                square.classList.add('square');
-                square.style.width = `${squareSize}%`;
-                square.style.height = `${squareSize}%`;
-                container.appendChild(square);
-
-                square.addEventListener('mouseenter', () => {
-                    square.style.backgroundColor = getRandomColor();
-                    square.classList.add('colored');
-                });
-            }
+    return square;
 }
 
+const container = document.querySelector("#grid-container");
+
+//Grid creator
+function gridBuilder (squaresPerSide = 16) {
+    const totalSquares = squaresPerSide * squaresPerSide;
+
+    const squareSize = 100 / squaresPerSide;
+
+    for (let i = 0; i < totalSquares; i++) {
+        const newSquare = createSquare(squareSize);
+        container.appendChild(newSquare);
+    }
+}
 
 //UserInput prompt button
 const btn = document.querySelector("#btn");
@@ -58,9 +64,9 @@ eraser.addEventListener = ('click', () => {
 
     eraser.addEventListener = ('mouseover', () => {
        if (isEraserActive) {
-        square.style.backgroundColor = 'white';
+        square.style.backgroundColor = 'beige';
        } else {
-        square.style.backgroundColor = rgb(255, 0, 128) 
+        square.style.backgroundColor = getRandomColor(); 
        }
     });
 });
@@ -74,4 +80,4 @@ function getRandomColor() {
     return `rgb(${r}, ${g}, ${b})`;
 }
 
-gridBuilder(16);
+gridBuilder();
