@@ -1,13 +1,29 @@
+const eraserBtn = document.querySelector('#eraser');
+
+let isEraserActive = false;
+
+//eraser
+eraserBtn.addEventListener('click', () => {
+    isEraserActive = !isEraserActive;
+});
+
 //Create square
 function createSquare(squareSize) {
     const square = document.createElement('div');
+
     square.classList.add('square');
 
     square.style.width = `${squareSize}%`;
     square.style.height = `${squareSize}%`;
 
-    square.addEventListener('mouseenter', () => {
-        square.style.backgroundColor = getRandomColor();
+    //eraser
+    square.addEventListener('mouseover', () => {
+        if (isEraserActive) {
+            square.style.backgroundColor = 'beige';
+            console.log("Current square inline style is:", square.style.backgroundColor);
+        } else {
+            square.style.backgroundColor = getRandomColor(); 
+        }
     });
 
     return square;
@@ -50,24 +66,6 @@ reset.addEventListener('click', () => {
 
     squares.forEach(square => {
         square.style.backgroundColor = 'beige';
-    });
-});
-
-
-//Eraser
-const eraser = document.querySelector('#eraser');
-
-let isEraserActive = false;
-
-eraser.addEventListener = ('click', () => {
-    isEraserActive = !isEraserActive;
-
-    eraser.addEventListener = ('mouseover', () => {
-       if (isEraserActive) {
-        square.style.backgroundColor = 'beige';
-       } else {
-        square.style.backgroundColor = getRandomColor(); 
-       }
     });
 });
 
