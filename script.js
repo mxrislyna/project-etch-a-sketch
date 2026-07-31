@@ -22,7 +22,8 @@ function createSquare(squareSize) {
     //eraser
     square.addEventListener('mouseover', () => {
         if (isEraserActive) {
-            square.style.backgroundColor = 'beige';
+            square.style.backgroundColor = '';
+            square.style.opacity = '';
             opacity = 0.1;
             hasColor = false;
         } else if (!isEraserActive && hasColor === false) {
