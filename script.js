@@ -10,7 +10,10 @@ eraserBtn.addEventListener('click', () => {
 //Create square
 function createSquare(squareSize) {
     const square = document.createElement('div');
+    let opacity = 0.1;
+    let hasColor = false;
 
+    square.classList.add('opacity');
     square.classList.add('square');
 
     square.style.width = `${squareSize}%`;
@@ -20,15 +23,20 @@ function createSquare(squareSize) {
     square.addEventListener('mouseover', () => {
         if (isEraserActive) {
             square.style.backgroundColor = 'beige';
-            console.log("Current square inline style is:", square.style.backgroundColor);
-        } else {
-            square.style.backgroundColor = getRandomColor(); 
+            opacity = 0.1;
+            hasColor = false;
+        } else if (!isEraserActive && hasColor === false) {
+            square.style.backgroundColor = getRandomColor();
+            hasColor = true;
+            square.style.opacity = 0.1;
+        } else if (!isEraserActive && hasColor === true) {
+            opacity += 0.1;
+            square.style.opacity = opacity; 
         }
     });
-
+    
     return square;
 }
-
 const container = document.querySelector("#grid-container");
 
 //Grid creator
