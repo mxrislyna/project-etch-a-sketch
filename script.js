@@ -19,9 +19,15 @@ function gridBuilder (squaresPerSide) {
 const btn = document.querySelector("#btn");
 
 btn.addEventListener('click', () => {
-    let userInput = Number(prompt("", "ex. 10"));
-    container.innerHTML = "";
-    gridBuilder(userInput);
+    let userInput = Number(prompt("", "Please enter a number that is less than 100 :)"));
+
+    if (!userInput || userInput <= 0 || !Number.isInteger(Number(userInput))) {
+        return prompt("Oops. Invalid! Enter a valid number :D")
+    } else if (userInput <= 100) {
+        container.innerHTML = "";
+        gridBuilder(userInput);
+    }
 });
+
 
 gridBuilder(16);
