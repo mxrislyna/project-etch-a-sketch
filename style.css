@@ -1,9 +1,17 @@
+body {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Main box that holds the squares*/
 #grid-container {
-    width: 480px;
-    height: 480px;
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    width: 800px;
+    height: 800px;
     border: 2px solid black;
 }
 
@@ -19,4 +27,6 @@
 .colored {
     background-color: olive;
 }
+
+.button
 
