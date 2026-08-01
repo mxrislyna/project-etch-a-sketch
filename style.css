@@ -3,6 +3,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #9cb09e;
 }
 
 /* Main box that holds the squares*/
@@ -12,7 +13,7 @@ body {
     align-items: center;
     width: 700px;
     height: 700px;
-    border: 2px solid black;
+    border: 2px solid #000000;
 }
 
 #btn-container {
@@ -28,7 +29,7 @@ body {
     height: 30px;
     box-sizing: border-box;
     border: 1px solid #ccc;
-    background-color: beige;
+    background-color: #f5f5dc;
 }
 
 #btn {
@@ -36,22 +37,22 @@ body {
     height: 40px;
     width: auto;
     font-size: 15px;
-    background-color: olivedrab;
+    background-color: #b7e4c7;
 }
 
 #reset-btn {
-    background-color: skyblue;
+    background-color: #87ceeb;
     height: 30px;
     width: auto;
     font-size: 15px;
 }
 
 button:hover {
-    color: green;
+    color: #008000;
 }
 
 #eraser {
-    background-color: pink;
+    background-color: #ffd1dc;
     height: 30px;
     width: auto;
     font-size: 15px;
